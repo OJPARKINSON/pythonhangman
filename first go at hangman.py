@@ -1,5 +1,5 @@
 while True:
-    first_word = ()
+    first_word = () 
     second_word = ()
     third_word = ()
     fourth_word = ()
