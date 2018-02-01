@@ -249,5 +249,5 @@ while True:
         print("now player 1 is player 2 and player 2 is now player 1")
         continue
     else:
-        print('Goodbyeyy')
+        print('Goodbye')
         break
