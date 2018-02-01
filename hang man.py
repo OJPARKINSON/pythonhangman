@@ -81,5 +81,5 @@ while True:
     if answer == 'y':  # add player swap
         continue
     else:
-        print('Goodbye')
+        print('See you later')
         break
