@@ -10,7 +10,7 @@ while True:
     wordLength = 9 #set up for the while loop
     print("\t Welcome to two player hangman hang man", "\t ")
     while wordLength >= 8:
-        word = input("Player one enter a word for player two to guess word, no longer than 8 letters: ")
+        word = input("Player one please enter a word for player two to guess word, no longer than 8 letters: ")
         neword = [word[i:i+1] for i in range(0,len(word),1)] #used to separte the word so that each letter can be assigned a name
         wordLength = len(neword) #Works out the lenth of the word      
     print((" \n") * 40)  #seperates the player 1 part with the player 2 part.
@@ -45,7 +45,7 @@ while True:
         lenth_number = 8
         newwword = ["_","_","_","_","_","_","_","_"]
     else:
-        print ("The word needs to be betwween 2-8 letters long")
+        print ("The word needs to be between 2-8 letters long")
         break
     Hangman = (
 """
