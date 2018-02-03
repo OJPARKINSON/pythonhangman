@@ -6,9 +6,9 @@ while True:
     fithWord = ()
     sixthWord = ()
     seventhWord = ()
-    eighthWord = () 
-    wordLength = 9 #set up for the while loop
-    print("\t Welcome to two player hangman hang man", "\t ")
+    eighthWord = ()
+    wordLength = 9 #Set up for the while loop
+    print("\t", "Welcome to two player hangman hang man", "\t ")
     while wordLength >= 8:
         word = input("Player one please enter a word for player two to guess word, no longer than 8 letters: ")
         neword = [word[i:i+1] for i in range(0,len(word),1)] #used to separte the word so that each letter can be assigned a name
@@ -17,25 +17,24 @@ while True:
     print((" \n") * 2) 
     if wordLength == 2:  #Using this if staitment, it gives each letter a name and this is worked out by looking at the letter length.
         firstWord, secondWord = word
-        print(word)
         lenth_number = 2
-        newwword = ["_","_"]  #this sets the number of letters so it is hidden and it can be changed when player 2 guesses it correct.
+        wordDisplay = ["_","_"]  #This sets the number of letters so it is hidden and it can be changed when player 2 guesses it correct.
     elif wordLength  == 3:
         firstWord, secondWord, thirdWord = word
         lenth_number = 3
-        newwword = ["_","_","_"]
+        wordDisplay = ["_","_","_"]
     elif wordLength == 4:
         firstWord, secondWord, thirdWord, fourthWord = word
         lenth_number = 4
-        newwword = ["_","_","_","_"]
+        wordDisplay = ["_","_","_","_"]
     elif wordLength == 5:
         firstWord, secondWord, thirdWord, fourthWord, fithWord = word
         lenth_number = 5
-        newwword = ["_","_","_","_","_"]
+        wordDisplay = ["_","_","_","_","_"]
     elif wordLength == 6:
         firstWord, secondWord, thirdWord, fourthWord, fithWord, sixthWord = word
         lenth_number = 6
-        newwword = ["_","_","_","_","_","_"]
+        wordDisplay = ["_","_","_","_","_","_"]
     elif wordLength == 7:
         firstWord, secondWord, thirdWord, fourthWord, fithWord, sixthWord, seventhWord = word
         lenth_number = 7
@@ -43,7 +42,7 @@ while True:
     elif wordLength == 8:
         firstWord, secondWord, thirdWord, fourthWord, fithWord, sixthWord, seventhWord, eighthWord = word
         lenth_number = 8
-        newwword = ["_","_","_","_","_","_","_","_"]
+        wordDisplay = ["_","_","_","_","_","_","_","_"]
     else:
         print ("The word needs to be between 2-8 letters long")
         break
@@ -187,32 +186,32 @@ while True:
     correct_guess = 0  #Sets up for the varibles 
     print(wordLength * "_ ")
     guess = input("Guess a letter :")
-    while newwword != neword:
+    while wordDisplay != neword:
         allguesses = correct_guess + incorrect_guess
         if guess == firstWord or guess == secondWord or guess == thirdWord or guess == fourthWord or guess == fithWord or guess == sixthWord or guess == seventhWord or guess == eighthWord:
             correct_guess += 1
             print(Hangman[(len(Hangman) - 0) - attempts])
-            if guess == firstWord:  #if the players 2 guess equals the first word and then it selects the frist letter in the list and replaces it with guess insted of "_". 
-                newwword[0] = guess
+            if guess == firstWord:  #If the players 2 guess equals the first word and then it selects the frist letter in the list and replaces it with guess insted of "_". 
+                wordDisplay[0] = guess
             if guess == secondWord:
-                newwword[1] = guess
-            if guess == thirdWord:  #it uses if staitments so that there are two if the same letter it diesnt have to be guesses twice
-                newwword[2] = guess
+                wordDisplay[1] = guess
+            if guess == thirdWord:  #It uses if staitments so that there are two if the same letter it diesnt have to be guesses twice
+                wordDisplay[2] = guess
             if guess == fourthWord:
-                newwword[3] = guess
+                wordDisplay[3] = guess
             if guess == fithWord:
-                newwword[4] = guess
+                wordDisplay[4] = guess
             if guess == sixthWord:
-                newwword[5] = guess
+                wordDisplay[5] = guess
             if guess == seventhWord:
-                newwword[6] = guess
+                wordDisplay[6] = guess
             if guess == eighthWord:
-                newwword[7] = guess
-            print(" \n " * 3)  #adds new blank lines
-            print(', '.join(newwword))  #puts the sting togeather
+                wordDisplay[7] = guess
+            print(" \n " * 3)  #Adds new blank lines
+            print(', '.join(wordDisplay))  #Puts the sting togeather
             print("Incorect guess, you have ", incorrect_guess, "incorrect guesses")
             print(" \n " * 2)
-            if newwword == neword:
+            if wordDisplay == neword:
                 break    
             elif correct_letters != word:
                 guess = input("Have another guess: ")
@@ -228,7 +227,7 @@ while True:
                 break
             attempts -= 1
             print(Hangman[(len(Hangman) - 1) - attempts])
-            print(', '.join(newwword))
+            print(', '.join(wordDisplay))
             print(" \n")
 
             if correct_guess == wordLength:
@@ -244,7 +243,7 @@ while True:
         if answer in ('y', 'n'):
             break
         print('Invalid input.')
-    if answer == 'y':  # add player swap
+    if answer == 'y':  #Add player swap
         print(" \n " * 10)
         print("now player 1 is player 2 and player 2 is now player 1")
         continue
