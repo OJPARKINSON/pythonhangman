@@ -1,5 +1,5 @@
 while True:
-    firstWord = ()
+    firstWord = ()  #These all open strings so that they can all be given letters
     secondWord = ()
     thirdWord = ()
     fourthWord = ()
@@ -11,10 +11,14 @@ while True:
     print("\t", "Welcome to two player hangman hang man", "\t ")
     while wordLength >= 8:
         word = input("Player one please enter a word for player two to guess word, no longer than 8 letters: ")
-        neword = [word[i:i+1] for i in range(0,len(word),1)] #used to separte the word so that each letter can be assigned a name
+####        neword = [word[i:i+1] for i in range(0,len(word),1)] #used to separte the word so that each letter can be assigned a name
         wordLength = len(neword) #Works out the lenth of the word      
-    print((" \n") * 40)  #seperates the player 1 part with the player 2 part.
+    print((" \n") * 40)  #Seperates the player 1 part with the player 2 part.
     print((" \n") * 2) 
+
+    for x in wordlenth:
+
+
     if wordLength == 2:  #Using this if staitment, it gives each letter a name and this is worked out by looking at the letter length.
         firstWord, secondWord = word
         lenth_number = 2
