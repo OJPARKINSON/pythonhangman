@@ -5,9 +5,10 @@ fourthWord = ()
 fithWord = ()
 sixthWord = ()
 seventhWord = ()
+from hangmanDisplay import Hangman  #inputs a ver long varible.
 wordLength = 8  #Set up for the while loop
 while True:
-    print("\t", "Welcome to two player hangman hang man", "\t ")
+    print("\t", "Welcome to two player hangman hang man")
     while wordLength >= 7:
         word = input("Player one please enter a word for player two to guess word, no longer than 7 letters: ")
         neword = [word[x:x+1] for x in range(0,len(word),1)]  #used to separte the word so that each letter can be assigned a name
@@ -65,8 +66,8 @@ while True:
             print("You have ", incorrect_guess, "incorrect guesses")
             print(" \n " * 2)
             if wordDisplay == neword:
-            	Print("Well done")
-                break    
+                print("Well done")
+                break
             elif correct_letters != word:
                 guess = input("Have another guess: ")
                 pass
