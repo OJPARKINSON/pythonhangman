@@ -1,16 +1,16 @@
-fstWrd = ()  #First word varible. These all open strings so that they can all be given letters.
-secdWrd = () #second word
-thrdWrd = ()  #third word
-forthWrd = ()
-fithWrd = ()
-sxthWrd = ()
-svthWrd = ()
-correct_letters = []
-incorrect_guess = 0
-correct_guess = 0  
-from hangmanDisplay import Hangman  #Inputs a variable long varible.
-wordLength = 8  #Set up for the while loop.
+from hangmanDisplay import Hangman  #Inputs a very long varible.
 while True:
+    fstWrd = ()  #First word. These all open strings so that they can all be given letters.
+    secdWrd = () #second word
+    thrdWrd = ()  #third word, etc
+    forthWrd = () #Needs to be placed in the while loop so that it doesn't go onto the next game.
+    fithWrd = ()
+    sxthWrd = ()
+    svthWrd = ()
+    incorrect_guess = 0
+    correct_guess = 0 
+    word = ()  #Empties the varible for multiple games 
+    wordLength = 8  #Set up for the while loop.
     print("\t", "Welcome to two player hangman hang man")
     while wordLength >= 7:
         word = input("Player one please enter a word for player two to guess word, no longer than 7 letters: ")
@@ -46,7 +46,10 @@ while True:
         if guess == fstWrd or guess == secdWrd or guess == thrdWrd or guess == forthWrd or guess == fithWrd or guess == sxthWrd or guess == svthWrd:
             correct_guess += 1
             print(Hangman[(len(Hangman) - 0) - attempts])
-            if guess == fstWord:  #If player 2's guess is the same as the first letter then it displays the right letter.
+            if incorrect_guess == 10:
+            	print("Unlucly, you've reached the max ammount of wrong guesses")
+            	break
+            if guess == fstWrd:  #If player 2's guess is the same as the first letter then it displays the right letter.
                 wordDisplay[0] = guess
             if guess == secdWrd:
                 wordDisplay[1] = guess
@@ -64,10 +67,10 @@ while True:
             print(', '.join(wordDisplay))  #Puts the sting togeather.
             print("You have ", incorrect_guess, "incorrect guesses")
             print(" \n " * 2)
-            if wordDisplay == neword:
+            if wordDisplay == neword:  #If the word is guessed it ends while loop
                 print("Well done")
                 break
-            elif correct_letters != word:
+            elif wordDisplay != word:
                 guess = input("Have another guess: ")
                 pass
             if incorrect_guess == 10:
@@ -86,7 +89,7 @@ while True:
                 print("Well done, you guessed the worddd")
                 print(Hangman[(len(Hangman) - 0) - attempts])
                 break
-            elif correct_letters != word:
+            elif wordDisplay != word:
                 guess = input("Have another guess: ")                   
     print(" \n ")
     print("The word was: ", word)
