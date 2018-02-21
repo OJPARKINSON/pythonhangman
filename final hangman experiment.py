@@ -15,6 +15,7 @@ while True:
     while wordLength >= 7:
         word = input("Player one please enter a word for player two to guess word, no longer than 7 letters: ")
         neword = [word[x:x+1] for x in range(0,len(word),1)]  #used to separte the word so that each letter can be assigned a name.
+        print(neword)
         wordLength = len(neword)  #Works out the lenth of the word.
     print((" \n") * 42)  #Seperates the player 1 part with the player 2 part.
     if wordLength == 2:  #Using this if staitment, it gives each letter a name and this is worked out by looking at the letter length.
