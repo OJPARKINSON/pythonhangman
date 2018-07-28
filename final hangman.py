@@ -8,12 +8,12 @@ while True:
     sxthWrd = ()
     svthWrd = ()
     incorrect_guess = 0
-    correct_guess = 0 
-    word = ()  #Empties the varible for multiple games 
+    correct_guess = 0
+    word = ()  #Empties the varible for multiple games
     wordLength = 8  #Set up for the while loop.
     print("\t", "Welcome to two player hangman hang man")
     while wordLength >= 7:
-        word = input("Player one please enter a word for player two to guess word, no longer than 7 letters: ")
+        word = input("Player one please enter a word for player two to guess, the word must be no longer than 7 letters: ")
         neword = [word[x:x+1] for x in range(0,len(word),1)]  #used to separte the word so that each letter can be assigned a name.
         print(neword)
         wordLength = len(neword)  #Works out the lenth of the word.
@@ -23,7 +23,7 @@ while True:
         wordDisplay = ["_","_"]  #This sets the number of letters so it is hidden and it can be changed when player 2 guesses it correct.
     elif wordLength  == 3:
         fstWrd, secdWrd, thrdWrd = word
-        wordDisplay = ["_","_","_"]  #Has to be set out like this so that its an integer. 
+        wordDisplay = ["_","_","_"]  #Has to be set out like this so that its an integer
     elif wordLength == 4:
         fstWrd, secdWrd, thrdWrd, forthWrd = word
         wordDisplay = ["_","_","_","_"]
@@ -33,14 +33,14 @@ while True:
     elif wordLength == 6:
         fstWrd, secdWrd, thrdWrd, forthWrd, fithWrd, sxthWrd = word
         wordDisplay = ["_","_","_","_","_","_"]
-    elif wrdLength == 7:
+    elif wordLength == 7:
         fstWord, secdWrd, thrdWrd, forthWrd, fithWrd, sxthWrd, svthWrd = word
         wordDisplay = ["_","_","_","_","_","_","_"]
     else:
         print ("The word needs to be between 2-8 letters long")
         break
     print(Hangman[0])
-    attempts = len(Hangman) - 1      
+    attempts = len(Hangman) - 1
     print(wordLength * "_ ")
     guess = input("Guess a letter :")
     while wordDisplay != neword:
@@ -91,7 +91,7 @@ while True:
                 print(Hangman[(len(Hangman) - 0) - attempts])
                 break
             elif wordDisplay != word:
-                guess = input("Have another guess: ")                   
+                guess = input("Have another guess: ")
     print(" \n ")
     print("The word was: ", word)
     while True:
@@ -101,7 +101,7 @@ while True:
         print('Invalid input.')
     if answer == 'y':  #Add player swap.
         print(" \n " * 10)
-        print("Now player one is player two and player two is now player one", " \n")
+        print("Now player one is player two and player two is now player one", " \n ")
         continue
     else:
         print('Goodbye')
